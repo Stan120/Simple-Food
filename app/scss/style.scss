@@ -3,5 +3,19 @@
 @import 'vars';
 @import 'global';
 
+.menu{   
+display: flex;
+justify-content: space-between;
+text-align: center;
+      &__list{
+         display: flex;
+         justify-content: space-between;
+      }
+      &__user-nav{
+         display: flex;
+         justify-content: space-between;
+      }
+}
+
 
 @import 'media';
