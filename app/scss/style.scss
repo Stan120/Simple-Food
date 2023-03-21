@@ -34,7 +34,7 @@ transition: box-shadow 0.3s, opacity 0.3s;
    align-items: center;
    &__list{
       display: flex;
-      margin-right: 66px;         
+      margin-right: 50px;         
    }
    &__item:not(:last-child){
       margin-right: 46px;
@@ -52,62 +52,6 @@ transition: box-shadow 0.3s, opacity 0.3s;
       &__link:active{
          text-shadow: 2px 2px 5px rgba($default, 0.5);        
       }
-
-//    &__control{
-//       display: flex;
-//       margin-right: 13px;         
-//       }
-//       &__control-item:not(:last-child){         
-//          margin-right: 35px;
-//       }
-//       &__control-link{
-//          display: flex;
-//          background-repeat: no-repeat;
-//          background-size: contain;
-//          background-position: center;
-//          width: 18px;
-//          height: 18px;
-//          position: relative;
-//          z-index: 2;
-//       }
-//       &__control-link::before{
-//          content: '';
-//          position: absolute;
-//          border-radius: 5px;
-//          width: 44px;
-//          height: 44px;
-//          bottom: -67%;
-//          right: -67%;
-//          z-index: -1;
-//       }
-//       &__control-link:focus::before{
-//          background-color: rgba($orange, 0.1);
-//          box-shadow: 0px 0px 0px 2px rgba($orange, 0.7);         
-//       }
-//       &__control-link:hover::before{
-//          background-color: $orange;
-//          color: $white;
-//       }
-      
-//       &__control-num{
-//          position: absolute;
-//          text-align: center;
-//          top: -5px;
-//          right: -8px;
-//          width: 14px;
-//          height: 14px;
-//          border-radius: 50%;
-//          background-color: $orange;
-//          font-size: 10px;
-//          line-height: 1.2;
-//          color: $white;
-//       }
-//       &__control-num:hover{
-//          color: $orange;
-//          background-color: $white;
-//       }
-// 
-
    &__control{
       display: flex;
    }
@@ -115,44 +59,61 @@ transition: box-shadow 0.3s, opacity 0.3s;
          margin-right: 10px;
       }
       &__control-btn{
-         display: block;
-         background-repeat: no-repeat;
-         background-size: 18px 18px;
-         background-position: center;   
-         padding: 22px;
+         display: block;       
+         width: 44px;
+         height: 44px;
          border-radius: 5px;         
          position: relative;
-         transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
+         transition: background-color 0.3s, box-shadow 0.3s, color 0.3s, stroke 0.3s;         
       }
       &__control-btn:focus{
          background-color: rgba($bg-focus, 0.1);
          box-shadow: 0px 0px 0px 2px rgba($orange, 0.7);         
       }
       &__control-btn:hover{
-         background-color: $orange;
+         background-color: $orange;         
+      }
+      &__control-btn:hover &__control-icon{
+         stroke: $white;
+      }
+      &__control-btn:hover &__control-num{
+         background-color: $white;
+         color: $orange;
       }
       &__control-btn:active{
-         background-color: $bg-active;
+         background-color: $bg-active;         
       }
-
+      &__control-btn:active &__control-icon{
+         stroke: $dark-blue;
+      }
+      &__control-btn:active &__control-num{
+         background-color: $orange;
+         color: $white;
+      }
+      &__control-icon{
+         width: 18px;
+         height: 18px;
+         stroke: $dark-blue;
+         fill: none;
+         transition: stroke 0.3s;
+      }
+      &__control-icon:hover{
+         stroke: $white;
+      }
          &__control-num{
             position: absolute;
             text-align: center;
             top: 8px;
             right: 5px;
             width: 14px;
-            height: 14px;
+            height: 14px;           
             border-radius: 50%;
             background-color: $orange;
             font-size: 10px;
             line-height: 1.2;
             color: $white;
-         }
-         &__control-num:hover{
-            background-color: $white;
-            color: $orange;
-
-         }
+            transition: background-color 0.3s, color 0.3s;
+         }      
    }
 
 
