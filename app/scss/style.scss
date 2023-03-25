@@ -13,20 +13,6 @@
    font-size: 18px;
    line-height: 1.16;
 }
-
-.logo{
-transition: box-shadow 0.3s, opacity 0.3s;
-   &:focus{      
-      box-shadow: 0px 0px 0px 2px rgba($orange, 0.7);      
-      border-radius: 5px;
-   }
-   &:hover{
-      opacity: 0.8;
-   }
-   &:active{
-      opacity: 0.5;
-   }
-}
 }
 
 .menu{
@@ -67,7 +53,7 @@ transition: box-shadow 0.3s, opacity 0.3s;
          transition: background-color 0.3s, box-shadow 0.3s, color 0.3s, stroke 0.3s;         
       }
       &__control-btn:focus{
-         background-color: rgba($bg-focus, 0.1);
+         background-color: rgba($bg-focus, 0.1);         
          box-shadow: 0px 0px 0px 2px rgba($orange, 0.7);         
       }
       &__control-btn:hover{
@@ -115,6 +101,190 @@ transition: box-shadow 0.3s, opacity 0.3s;
             transition: background-color 0.3s, color 0.3s;
          }      
    }
+
+
+
+.footer-top{
+display: flex;
+justify-content: space-between;
+margin-bottom: 60px;
+   &__list:not(:last-child){
+      margin-right: 70px;
+   }
+   &__logo{
+      display: inline-block;
+      margin-bottom: 30px;
+   }
+      &__label{
+         display: block;
+      }
+      &__form-field{
+         display: block;
+         width: 100%;
+         padding: 13px 15px;
+         margin-bottom: 12px;
+         font-size: 14px;         
+         box-shadow: 0px 0px 0px 1px $gray;
+         border-radius: 5px;
+         transition: box-shadow 0.3s;
+      }
+      &__form-field:focus{         
+         box-shadow: 0px 0px 0px 2px $orange;
+      }
+      &__form-field::placeholder{
+         color: $gray;
+         transition: color 0.3s;
+      }
+      &__form-field:hover::placeholder{
+         color: $dark-blue;
+      }
+      &__button{
+         @extend %Rubik-500;
+         border-radius: 5px;
+         padding: 13px 38px;
+         font-size: 14px;
+      }
+         &__button-icon{
+            width: 14px;
+            height: 14px;            
+            fill: $white;
+            margin-right: 15px;
+            transition: fill 0.3s;
+         }
+         &__button:focus &__button-icon{
+            fill: $orange;
+         }
+         &__button:hover &__button-icon{
+            fill: $orange;
+         }
+         &__button:active &__button-icon{
+            fill: $orange;
+         }
+         &__items{
+            display: grid;
+            grid-template-columns: 223px 161px auto;            
+            grid-auto-flow: column;
+            grid-template-rows: repeat(4, 1fr);
+            font-size: 18px;
+            letter-spacing: 0.01em;
+         }
+         &__item{
+            margin-bottom: 20px;
+         }
+         &__link{
+            transition: box-shadow 0.3s, color 0.3s, text-shadow 0.3s;
+         }
+         &__link:focus{
+            box-shadow: 0px 0px 0px 2px rgba($orange, 0.7);      
+            border-radius: 5px;
+         }
+         &__link:hover{
+            color: $orange;      
+         }
+         &__link:active{
+            text-shadow: 2px 2px 5px rgba($default, 0.5);        
+         }
+         &__contact-item{
+            margin-bottom: 15px;
+         }
+         &__contact-link{
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            line-height: 2;
+            stroke: $default;
+            fill: none;
+            transition: box-shadow 0.3s, text-shadow 0.3s, color 0.3s;
+         }
+         &__contact-link-icon{
+            width: 18px;
+            height: 18px;
+            margin-right: 7px;
+            transition: stroke 0.3s;
+         }   
+         &__contact-link:focus{
+            box-shadow: 0px 0px 0px 2px rgba($orange, 0.7);      
+            border-radius: 5px;
+         }         
+         &__contact-link:hover {
+            color: $orange;
+         }
+         &__contact-link:hover &__contact-link-icon{
+            stroke: $orange;
+         }
+         &__contact-link:active {
+            box-shadow: 0px 0px 0px 0px rgba($orange, 0.7);
+            text-shadow: 2px 2px 5px rgba($default, 0.5);
+            color: $default;            
+         }
+         &__contact-link:active &__contact-link-icon{            
+            stroke: $default;
+         }        
+      &__social{
+         display: flex;         
+      }
+      &__social-item:not(:last-child){
+         margin-right: 13px;
+      }
+         &__social-link{
+            display: flex;
+            width: 39px;
+            height: 39px;
+            background-color: $silver;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s, box-shadow 0.3s;
+         }
+         &__social-link:focus{
+            background-color: rgba($bg-focus, 0.1);         
+            box-shadow: 0px 0px 0px 2px rgba($orange, 0.7);
+         }
+         &__social-link:hover{
+            background-color: $orange;
+         }
+         &__social-link:hover &__social-link-fb,
+         &__social-link:hover &__social-link-tw,
+         &__social-link:hover &__social-link-inst{
+            fill: $white;
+         }
+         &__social-link:active{
+            background-color: rgba($bg-focus, 0.1);         
+            box-shadow: 0px 0px 0px 0px rgba($orange, 0.7);
+         }
+         &__social-link:active &__social-link-fb,
+         &__social-link:active &__social-link-tw,
+         &__social-link:active &__social-link-inst{
+            fill: $orange;
+         }
+         &__social-link-fb{
+            width: 10px;
+            height: 20px;
+            fill: $default;
+            transition: fill 0.3s;
+         }
+         &__social-link-tw{
+            width: 21px;
+            height: 17px;
+            fill: $default;
+            transition: fill 0.3s;
+         }
+         &__social-link-inst{
+            width: 20px;
+            height: 20px;
+            fill: $default;
+            transition: fill 0.3s;
+         }
+}
+.footer-bottom{   
+   text-align: center;
+   &__copy{      
+      padding: 30px 0;
+      border-top: 1px solid $gray;
+      font-size: 14px;
+      line-height: 1;      
+   }
+}
 
 
 
