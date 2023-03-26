@@ -102,18 +102,111 @@
          }      
    }
 
+   .hero{      
+      &__content{
+         height: 660px;         
+         background-repeat: no-repeat;
+         background-size: contain;
+         background-position: 100% 0;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;         
+      }
+         &__inner{
+            max-width: 450px;          
+         }
+         &__title{
+            @extend %Rubik-500;
+            font-size: 66px;
+            color: $dark-blue;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+         }
+         &__subtitle{            
+            color: $orange;
+         }
+         &__text{
+            line-height: 1.5;
+            margin-bottom: 20px;
+         }
+         &__button{
+            margin-right: 34px;
+            font-size: 18px;
+            letter-spacing: 0.03em;
+         }
+         &__link{            
+            color: $dark-blue;
+            text-decoration: underline;
+            line-height: 1.5;
+            transition: text-decoration-color .3s, box-shadow .3s, text-shadow .3s, color .3s;
+         }
+         &__link:focus{
+            box-shadow: 0px 0px 0px 2px rgba($orange, 0.7);      
+            border-radius: 5px;
+            text-decoration-color: transparent;
+         }
+         &__link:hover{
+            color: $orange;
+            text-decoration-color: transparent;    
+         }
+         &__link:active{
+            text-shadow: 2px 2px 5px rgba($default, 0.5);
+            text-decoration-color: transparent;
+         }
+   }
+   
+.category{
+   &__button{      
+      background-color: $white;
+      border-radius: 5px;
+      color: $dark-blue;
+      padding: 12px 32px;
+      box-shadow: 0px 0px 0px 1px $silver;
+      display: inline-flex;
+      align-items: center;      
+   }
+   &__button:focus{
+      color: $dark-blue;
+      background-color: $white
+   }
+   &__button:hover{
+      color: $orange;
+      background-color: rgba($bg-focus, 0.1);      
+   }
+   &__button:active{
+      color: $dark-blue;
+      box-shadow: none;
+      background-color: $white;
+      box-shadow: inset 0px -5px 12px rgba($bg-active-btn, 0.2);
+   }
+   &__button:not(:last-child){
+      margin-right: 20px;
+   }
+   &__button-icon{
+      width: 44px;
+      height: 44px;
+      fill: $dark-blue;
+      margin-right: 10px;
+      transition: fill 0.3s;      
+   }   
+   &__button:hover &__button-icon{
+      fill: $orange;
+   }
+   &__button:active &__button-icon{
+      fill: $dark-blue;
+   }
 
+}
 
 .footer-top{
 display: flex;
-justify-content: space-between;
 margin-bottom: 60px;
    &__list:not(:last-child){
       margin-right: 70px;
    }
    &__logo{
       display: inline-block;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
    }
       &__label{
          display: block;
@@ -165,6 +258,7 @@ margin-bottom: 60px;
             grid-template-columns: 223px 161px auto;            
             grid-auto-flow: column;
             grid-template-rows: repeat(4, 1fr);
+            justify-content: start;
             font-size: 18px;
             letter-spacing: 0.01em;
          }
@@ -213,7 +307,7 @@ margin-bottom: 60px;
             stroke: $orange;
          }
          &__contact-link:active {
-            box-shadow: 0px 0px 0px 0px rgba($orange, 0.7);
+            box-shadow: none;
             text-shadow: 2px 2px 5px rgba($default, 0.5);
             color: $default;            
          }
@@ -250,7 +344,7 @@ margin-bottom: 60px;
          }
          &__social-link:active{
             background-color: rgba($bg-focus, 0.1);         
-            box-shadow: 0px 0px 0px 0px rgba($orange, 0.7);
+            box-shadow: none;
          }
          &__social-link:active &__social-link-fb,
          &__social-link:active &__social-link-tw,
