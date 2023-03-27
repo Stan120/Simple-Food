@@ -160,8 +160,7 @@
       margin-bottom: 60px;
    }
    &__filter{
-      display: flex;
-      justify-content: space-between;
+      display: flex;      
       margin-bottom: 45px;
    }
    &__box:not(:last-child){
@@ -238,6 +237,7 @@
    }
    &__button{
       font-size: 14px;
+      padding: 7px 16px;
    }
    &__more{
       text-align: center;
