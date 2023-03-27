@@ -1,0 +1,25 @@
+$default:#31352b;
+$bg:#F9FAFF;
+$orange:#ff6838;
+$silver: #ececec;
+$gray:#c2c2c2;
+$dark-blue:#363853;
+$white: #ffffff;
+$bg-active:#fff2ed;
+$bg-focus:rgb(255, 122, 80);
+$bg-active-btn:rgba(255, 104, 56);
+
+%Rubik-300{
+   font-family: 'Rubik-Light';
+   font-weight: 300;
+}
+
+%Rubik-400{
+   font-family: 'Rubik-Regular';
+   font-weight: 400;
+}
+
+%Rubik-500{
+   font-family: 'Rubik-Medium';
+   font-weight: 500;
+}
