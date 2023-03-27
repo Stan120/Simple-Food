@@ -143,7 +143,7 @@
          &__link:focus{
             box-shadow: 0px 0px 0px 2px rgba($orange, 0.7);      
             border-radius: 5px;
-            text-decoration-color: transparent;
+            text-decoration-color: transparent;            
          }
          &__link:hover{
             color: $orange;
@@ -151,12 +151,23 @@
          }
          &__link:active{
             text-shadow: 2px 2px 5px rgba($default, 0.5);
-            text-decoration-color: transparent;
+            text-decoration-color: transparent;            
          }
    }
    
-.category{
-   &__button{      
+.category{   
+   &__title{
+      margin-bottom: 60px;
+   }
+   &__filter{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 45px;
+   }
+   &__box:not(:last-child){
+      margin-right: 20px;
+   }
+   &__btn{      
       background-color: $white;
       border-radius: 5px;
       color: $dark-blue;
@@ -165,37 +176,91 @@
       display: inline-flex;
       align-items: center;      
    }
-   &__button:focus{
+   &__btn:focus{
       color: $dark-blue;
       background-color: $white
    }
-   &__button:hover{
+   &__btn:hover{
       color: $orange;
       background-color: rgba($bg-focus, 0.1);      
    }
-   &__button:active{
+   &__btn:active{
       color: $dark-blue;
       box-shadow: none;
       background-color: $white;
       box-shadow: inset 0px -5px 12px rgba($bg-active-btn, 0.2);
-   }
-   &__button:not(:last-child){
-      margin-right: 20px;
-   }
-   &__button-icon{
+   }   
+   &__btn-icon{
       width: 44px;
       height: 44px;
       fill: $dark-blue;
       margin-right: 10px;
       transition: fill 0.3s;      
    }   
-   &__button:hover &__button-icon{
+   &__btn:hover &__btn-icon{
       fill: $orange;
    }
-   &__button:active &__button-icon{
+   &__btn:active &__btn-icon{
       fill: $dark-blue;
    }
-
+   &__items{
+      display: grid;
+      grid-template-columns: minmax(170px, 210px) minmax(170px, 210px) minmax(170px, 210px) minmax(170px, 210px) minmax(170px, 210px);
+      grid-gap: 30px;
+      margin-bottom: 60px;
+   }
+   &__card{
+      width: 210px;
+      background-color: $white;
+      box-shadow: 0px 0px 0px 1px $silver;
+      border-radius: 5px;      
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      padding: 20px 15px;
+   }
+   &__pic{
+      margin-bottom: 10px;
+   }
+   &__name{
+      font-size: 15px;
+      line-height: 1.2;
+      margin-bottom: 10px;
+   }
+   &__price{
+      @extend %Rubik-400;      
+      font-size: 15px;
+      line-height: 1.4;
+      margin-bottom: 10px;
+      color: $dark-blue;
+   }
+   &__button{
+      font-size: 14px;
+   }
+   &__more{
+      text-align: center;
+   }
+   &__link{            
+      color: $dark-blue;
+      text-decoration: underline;
+      line-height: 1.5;
+      transition: text-decoration-color .3s, box-shadow .3s, text-shadow .3s, color .3s;
+   }
+   &__link:focus{
+      box-shadow: 0px 0px 0px 2px rgba($orange, 0.7);      
+      border-radius: 5px;
+      text-decoration-color: transparent;
+   }
+   &__link:hover{
+      color: $orange;
+      text-decoration-color: transparent;    
+   }
+   &__link:active{
+      text-shadow: 2px 2px 5px rgba($default, 0.5);
+      text-decoration-color: transparent;
+   }
 }
 
 .footer-top{
